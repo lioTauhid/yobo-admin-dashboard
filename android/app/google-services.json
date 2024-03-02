@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "594685359786",
+    "firebase_url": "https://mega-mind-iot-default-rtdb.firebaseio.com",
+    "project_id": "mega-mind-iot",
+    "storage_bucket": "mega-mind-iot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594685359786:android:80d6a521695d621266c2d3",
+        "android_client_info": {
+          "package_name": "ai.megamind.yobo.yobo_bot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594685359786-9qcpce4ptcl00vlha21tmibdv2cm9ula.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSOoAHh9tG7x90MeC8h14GczWQZNUF43U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594685359786-9qcpce4ptcl00vlha21tmibdv2cm9ula.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594685359786:android:9f7b6fba3f8256f166c2d3",
+        "android_client_info": {
+          "package_name": "com.megamindtech.megamind_guard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594685359786-c3t0erio42isnopvlhlhjr597tf09qei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.megamindtech.megamind_guard",
+            "certificate_hash": "1f861f1e5c67dd4cbd7e2949d5604e839fa3eafd"
+          }
+        },
+        {
+          "client_id": "594685359786-g17ng0pmqjpfffi8d8s0asnda5jihgk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.megamindtech.megamind_guard",
+            "certificate_hash": "dfb4cf679753e6a64e62daad31647b8197603088"
+          }
+        },
+        {
+          "client_id": "594685359786-mqj54ohp5vdnkh5tkmrvhpjegdshoo81.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.megamindtech.megamind_guard",
+            "certificate_hash": "2df3ee5d9690098ffd737b8a5055b22aaa67b16f"
+          }
+        },
+        {
+          "client_id": "594685359786-9qcpce4ptcl00vlha21tmibdv2cm9ula.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSOoAHh9tG7x90MeC8h14GczWQZNUF43U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594685359786-9qcpce4ptcl00vlha21tmibdv2cm9ula.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
