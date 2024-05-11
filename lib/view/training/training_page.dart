@@ -115,7 +115,7 @@ class _TrainingPageState extends State<TrainingPage> {
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           side: BorderSide(width: 1, color: primaryColor)),
                       trailing: SizedBox(
-                        width: 140,
+                        width: 145,
                         child: Row(
                           children: [
                             IconButton(

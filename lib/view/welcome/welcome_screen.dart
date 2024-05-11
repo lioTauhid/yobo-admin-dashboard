@@ -92,8 +92,8 @@ class WelcomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        size.height / 3,
-                        size.width * 1.6);
+                        kIsWeb? size.height / 3:100,
+                        kIsWeb? size.width * 1.6:30);
                   }),
                 ),
                 const SizedBox(height: 15),

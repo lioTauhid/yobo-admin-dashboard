@@ -8,9 +8,10 @@ import '../../view_model/dashboad/dashboard_view_model.dart';
 import '../dashboard/dashboard.dart';
 
 class Account extends StatelessWidget {
-  Account({Key? key}) : super(key: key);
+  Account({super.key});
+
   final user = FirebaseAuth.instance.currentUser;
-  DashboardViewModel dashboardViewModel = Get.find();
+  final DashboardViewModel dashboardViewModel = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -190,6 +191,13 @@ class Account extends StatelessWidget {
               ),
               Divider(color: textPrimary, thickness: 0.4),
               const SizedBox(height: 10),
+              Center(
+                child: Text(
+                  'Version: 1.0',
+                  style: TextStyle(
+                      fontSize: fontMediumExtra, color: textSecondary),
+                ),
+              ),
               Center(
                 child: TextButton(
                     onPressed: () {

@@ -4,7 +4,7 @@ import '../../res/constants/value.dart';
 import '../../view_model/splash/splash_view_model.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

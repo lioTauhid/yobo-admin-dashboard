@@ -84,7 +84,7 @@ Widget sideDrawer(BuildContext context) {
                   Get.offNamed(RouteName.dashBoard);
                   AnalyticsViewModel analyticsViewModel = Get.find();
                   analyticsViewModel.listAnalyticsDate();
-                  Navigator.of(context).pop();
+                  Utils.hidePopup();
                 },
                 color: accentColor,
                 textColor: Colors.white,
@@ -103,7 +103,7 @@ Widget sideDrawer(BuildContext context) {
     alignment: Alignment.topLeft,
     margin: EdgeInsets.only(
         top: AppBar().preferredSize.height * 1.1,
-        bottom: MediaQuery.of(context).size.height / 3),
+        bottom: MediaQuery.of(context).size.height / 4),
     child: ListView(
       children: [
         MaterialButton(

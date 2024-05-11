@@ -25,6 +25,7 @@ class LoginRegViewModel extends GetxController {
   }
 
   Future<void> loginWithEmailPassword() async {
+    Utils.showLoading();
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.value.text,
@@ -33,13 +34,15 @@ class LoginRegViewModel extends GetxController {
         Get.offNamed(RouteName.dashBoard);
       }
     } on FirebaseAuthException catch (e) {
+      Utils.hidePopup();
       Utils.showSnackBar(e.message.toString() + e.code);
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
-      }
+      // if (e.code == 'user-not-found') {
+      //   print('No user found for that email.');
+      // } else if (e.code == 'wrong-password') {
+      //   print('Wrong password provided for that user.');
+      // }
     } catch (e) {
+      Utils.hidePopup();
       Utils.showSnackBar(e.toString());
     }
   }
@@ -56,11 +59,11 @@ class LoginRegViewModel extends GetxController {
       }
     } on FirebaseAuthException catch (e) {
       Utils.showSnackBar(e.message.toString() + e.code);
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      }
+      // if (e.code == 'weak-password') {
+      //   print('The password provided is too weak.');
+      // } else if (e.code == 'email-already-in-use') {
+      //   print('The account already exists for that email.');
+      // }
     } catch (e) {
       Utils.showSnackBar(e.toString());
     }

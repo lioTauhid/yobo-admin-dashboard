@@ -23,12 +23,13 @@ class WelcomeViewModel extends GetxController {
   Future<void> checkCode(code) async {
     /// check invitation code by api
     var headers = {
-      'Authorization': 'HErforEAtN0w',
+      'Authorization': 'W3@cCcP\$wRDD~0',
     };
+    // print(headers);
     await apiClient.get("/get-wait-list/$code", header: headers).then((value) {
       Utils.hidePopup();
-      print("case1");
-      print(jsonDecode(value));
+      // print("case1");
+      // print(jsonDecode(value));
       if (jsonDecode(value)["approved"] == 1) {
         singUpWithGoogle();
       } else {
@@ -36,7 +37,8 @@ class WelcomeViewModel extends GetxController {
             "Invitation code is invalid, try with correct code.");
       }
     }).catchError((e) {
-      print("case2");
+      // print("case2");
+      // print(e.toString());
       Utils.hidePopup();
       Utils.showSnackBar("Invitation code is invalid, try with correct code.");
     });

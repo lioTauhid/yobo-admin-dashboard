@@ -2,7 +2,6 @@ import 'package:YOBO_Bot/res/routes/routes_name.dart';
 import 'package:get/get.dart';
 import '../../view/account/account.dart';
 import '../../view/analytics/analytics.dart';
-import '../../view/config/update_config.dart';
 import '../../view/dashboard/dashboard.dart';
 import '../../view/home/home.dart';
 import '../../view/login/login_view.dart';
@@ -60,11 +59,11 @@ class AppRoutes {
           transitionDuration: const Duration(milliseconds: 250),
           transition: Transition.leftToRightWithFade,
         ),
-        GetPage(
-          name: RouteName.updateConfig,
-          page: () => const UpdateConfig(),
-          transitionDuration: const Duration(milliseconds: 250),
-          transition: Transition.leftToRightWithFade,
-        ),
+        // GetPage(
+        //   name: RouteName.updateConfig,
+        //   page: () => const UpdateConfig(),
+        //   transitionDuration: const Duration(milliseconds: 250),
+        //   transition: Transition.leftToRightWithFade,
+        // ),
       ];
 }

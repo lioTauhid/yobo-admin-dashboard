@@ -7,7 +7,8 @@ import '../../res/constants/app_color.dart';
 import '../../view_model/dashboad/dashboard_view_model.dart';
 
 class UpdateConfig extends StatefulWidget {
-  const UpdateConfig({key}) : super(key: key);
+  const UpdateConfig({key, required this.fileName}) : super(key: key);
+  final String fileName;
 
   @override
   _UpdateConfigState createState() => _UpdateConfigState();
@@ -30,11 +31,11 @@ class _UpdateConfigState extends State<UpdateConfig> {
     await rootRef
         .child("devices")
         .child(dashboardViewModel.mac.value)
-        .child("botConfig")
+        .child(widget.fileName)
         .once()
         .then((value) {
       setState(() => botConfig = value.snapshot.value as Map);
-      print(botConfig);
+      // print(botConfig);
     });
   }
 
@@ -48,7 +49,7 @@ class _UpdateConfigState extends State<UpdateConfig> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kIsWeb ? size.width / 1.3 : 0),
       decoration:
-      BoxDecoration(border: Border.all(width: 3, color: primaryColor)),
+          BoxDecoration(border: Border.all(width: 3, color: primaryColor)),
       child: Scaffold(
         backgroundColor: primaryBackground,
         appBar: AppBar(
@@ -66,19 +67,22 @@ class _UpdateConfigState extends State<UpdateConfig> {
           child: Column(
             children: [
               const Text("BioBot Config",
-                  style:
-                      TextStyle(color: accentColor, fontWeight: FontWeight.bold)),
-              SizedBox(height: 15),
+                  style: TextStyle(
+                      color: accentColor, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 15),
               Flexible(
                 child: ListView.builder(
                   itemCount: botConfig.length,
                   itemBuilder: (context, index) {
-                    return formItem(botConfig.keys.elementAt(index).toString(),
-                        botConfig.values.elementAt(index).toString(), 1, secondaryColor);
+                    return formItem(
+                        botConfig.keys.elementAt(index).toString(),
+                        botConfig.values.elementAt(index).toString(),
+                        1,
+                        secondaryColor);
                   },
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               MaterialButton(
                 elevation: 0,
                 minWidth: MediaQuery.of(context).size.width / 3,
@@ -90,7 +94,7 @@ class _UpdateConfigState extends State<UpdateConfig> {
                   rootRef
                       .child("devices")
                       .child(dashboardViewModel.mac.value)
-                      .child("botConfig")
+                      .child(widget.fileName)
                       .update(botN);
                   rootRef
                       .child("devices")
@@ -147,6 +151,6 @@ class _UpdateConfigState extends State<UpdateConfig> {
       }
     }
 
-    print(botConfig);
+    // print(botConfig);
   }
 }

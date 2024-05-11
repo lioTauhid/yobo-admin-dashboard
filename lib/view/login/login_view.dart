@@ -7,7 +7,7 @@ import '../../view_model/login_register/login_view_model.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({super.key});
 
   LoginRegViewModel loginRegViewModel = Get.put(LoginRegViewModel());
 

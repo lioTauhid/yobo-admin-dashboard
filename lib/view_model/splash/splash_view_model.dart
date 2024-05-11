@@ -10,7 +10,7 @@ class SplashController {
 
     if (user == null) {
       Timer(
-          const Duration(seconds: 2), () => Get.offNamed(RouteName.welcomeScreen));
+          const Duration(seconds: 2), () => Get.offNamed(RouteName.loginView));
     } else {
       Timer(
           const Duration(seconds: 2), () => Get.offNamed(RouteName.dashBoard));

@@ -19,9 +19,6 @@ class _WebChatState extends State<WebChat> {
   final GlobalKey webViewKey = GlobalKey();
 
   InAppWebViewController? webViewController;
-  InAppWebViewOptions options = InAppWebViewOptions(
-    mediaPlaybackRequiresUserGesture: false,
-  );
 
   PullToRefreshController? pullToRefreshController;
 
@@ -72,7 +69,8 @@ class _WebChatState extends State<WebChat> {
             IconButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const ConnectByQr()));                },
+                      MaterialPageRoute(builder: (_) => const ConnectByQr()));
+                },
                 icon: const Icon(Icons.qr_code_2,
                     color: secondaryColor, size: 24)),
             const SizedBox(width: 20)
@@ -85,8 +83,8 @@ class _WebChatState extends State<WebChat> {
               InAppWebView(
                 key: webViewKey,
                 initialUrlRequest: URLRequest(
-                    url: Uri.tryParse(
-                        'https://yobo.megamindtech.com/chat?model=ft:gpt-3.5-turbo-0613:megamind-tech:mega-t4:8AHr6elN')),
+                    url: WebUri.uri(Uri.tryParse(
+                        'https://yobo.megamindtech.com/chat?model=ft:gpt-3.5-turbo-0613:megamind-tech:mega-t4:8AHr6elN')!)),
                 // initialUrlRequest:
                 // URLRequest(url: WebUri(Uri.base.toString().replaceFirst("/#/", "/") + 'page.html')),
                 // initialFile: "assets/index.html",
@@ -138,7 +136,7 @@ class _WebChatState extends State<WebChat> {
                   }
                   setState(() {
                     this.progress = progress / 100;
-                    urlController.text = this.url;
+                    urlController.text = url;
                   });
                 },
                 onUpdateVisitedHistory: (controller, url, isReload) {
@@ -148,7 +146,7 @@ class _WebChatState extends State<WebChat> {
                   });
                 },
                 onConsoleMessage: (controller, consoleMessage) {
-                  print(consoleMessage);
+                  // print(consoleMessage);
                 },
               ),
               progress < 1.0

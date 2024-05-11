@@ -6,7 +6,7 @@ import '../../res/constants/app_color.dart';
 import 'home.dart';
 
 class ConnectByQr extends StatefulWidget {
-  const ConnectByQr({Key? key}) : super(key: key);
+  const ConnectByQr({super.key});
 
   @override
   _ConnectByQrState createState() => _ConnectByQrState();
@@ -19,7 +19,7 @@ class _ConnectByQrState extends State<ConnectByQr> {
   late Barcode barcode;
   bool flashOn = false;
 
-  final rootRef = FirebaseDatabase.instance.reference();
+  final rootRef = FirebaseDatabase.instance.ref();
 
   @override
   Widget build(BuildContext context) {

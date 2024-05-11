@@ -8,9 +8,9 @@ import 'package:get/get.dart';
 
 import '../../res/components/custom_dialog.dart';
 import '../../res/constants/value.dart';
-import '../../res/routes/routes_name.dart';
 import '../../view_model/dashboad/dashboard_view_model.dart';
 import '../../view_model/home/home_view_models.dart';
+import '../config/update_config.dart';
 import 'device_info.dart';
 
 class DeviceBody extends StatefulWidget {
@@ -33,7 +33,6 @@ class _DeviceBodyState extends State<DeviceBody> {
     // TODO: implement initState
     super.initState();
     loadDeviceInfo();
-    print(("called............"));
   }
 
   void loadDeviceInfo() async {
@@ -47,9 +46,9 @@ class _DeviceBodyState extends State<DeviceBody> {
         .once()
         .then((value) {
       deviceInfo = value.snapshot.value as Map;
-      botConfig = deviceInfo["botConfig"] as Map;
-      print(deviceInfo);
-      print(botConfig);
+      botConfig = deviceInfo["bot_config"] as Map;
+      // print(deviceInfo);
+      // print(botConfig);
     });
     setState(() {});
     isLoading = false;
@@ -178,7 +177,58 @@ class _DeviceBodyState extends State<DeviceBody> {
                             true,
                             const Icon(FontAwesomeIcons.penToSquare),
                             onTap: () {
-                          Get.toNamed(RouteName.updateConfig);
+                          showCustomDialog(
+                              context,
+                              "Select Config File",
+                              Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    MaterialButton(
+                                      onPressed: () {
+                                        Get.to(const UpdateConfig(
+                                            fileName: 'bot_config'));
+                                      },
+                                      color: primaryColor,
+                                      height: 100,
+                                      minWidth: double.infinity,
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(15)),
+                                          side: BorderSide(
+                                              width: 1, color: primaryColor)),
+                                      child: const Text("Bot Config",
+                                          style: TextStyle(
+                                              color: white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
+                                    ),
+                                    MaterialButton(
+                                      onPressed: () {
+                                        Get.to(const UpdateConfig(
+                                            fileName: 'reminder_config'));
+                                      },
+                                      color: primaryColor,
+                                      height: 100,
+                                      minWidth: double.infinity,
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(15)),
+                                          side: BorderSide(
+                                              width: 1, color: primaryColor)),
+                                      child: const Text("Reminder Config",
+                                          style: TextStyle(
+                                              color: white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              kIsWeb ? size.height * 1.8 : 0,
+                              kIsWeb ? size.width * 2 : 0);
                         })),
                     const SizedBox(height: 15),
                     SizedBox(

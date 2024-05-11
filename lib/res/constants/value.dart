@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 
 const double fontVeryBig = 26.0;
 const double fontBig = 22.0;

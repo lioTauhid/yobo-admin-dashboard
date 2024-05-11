@@ -217,7 +217,7 @@ class _HomeState extends State<Home> {
                   Get.offNamed(RouteName.dashBoard);
                   AnalyticsViewModel analyticsViewModel = Get.find();
                   analyticsViewModel.listAnalyticsDate();
-                  Navigator.of(context).pop();
+                  Utils.hidePopup();
                 },
                 color: accentColor,
                 textColor: Colors.white,
@@ -317,7 +317,8 @@ class _HomeState extends State<Home> {
         );
       },
     );
-    await Future.delayed(const Duration(seconds: 4));
+    Utils.showLoading();
+    await Future.delayed(const Duration(seconds: 5));
     statusList.clear();
     for (var d in deviceList) {
       await rootRef
@@ -332,5 +333,6 @@ class _HomeState extends State<Home> {
         stateSetter(() {});
       }
     }
+    Utils.hidePopup();
   }
 }

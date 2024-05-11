@@ -9,11 +9,10 @@ import '../../view_model/home/home_view_models.dart';
 import '../../view_model/training/training_view_model.dart';
 import '../analytics/analytics.dart';
 import '../home/home.dart';
-import '../training/training_page.dart';
-import '../webchat/webchat.dart';
+import '../training/rag_training.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({Key? key}) : super(key: key);
+  const DashBoard({super.key});
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -27,7 +26,8 @@ class _DashBoardState extends State<DashBoard> {
   final List<Widget> _widgetOptions = [
     const Home(),
     Analytics(),
-    const TrainingPage(),
+    const RagTraining(),
+    // const TrainingPage(),
     Account(),
   ];
 

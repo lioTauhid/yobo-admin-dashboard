@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../view_model/dashboad/dashboard_view_model.dart';
 
 class DeviceInfo extends StatefulWidget {
-  DeviceInfo(this.deviceInfo, {Key? key}) : super(key: key);
+  DeviceInfo(this.deviceInfo, {super.key});
   Map deviceInfo;
 
   @override
@@ -27,7 +27,7 @@ class _DeviceInfoState extends State<DeviceInfo> {
     tagController.text = widget.deviceInfo["tag"];
     infoController.text = widget.deviceInfo["info"] ?? "";
     placeController.text = widget.deviceInfo["place"] ?? "";
-    print(widget.deviceInfo);
+    // print(widget.deviceInfo);
   }
 
   @override
@@ -53,7 +53,7 @@ class _DeviceInfoState extends State<DeviceInfo> {
             ),
             TextFormField(
               decoration: const InputDecoration(
-                  labelText: "Place Tag", border: OutlineInputBorder()),
+                  labelText: "Place/Location", border: OutlineInputBorder()),
               controller: placeController,
             ),
             TextFormField(

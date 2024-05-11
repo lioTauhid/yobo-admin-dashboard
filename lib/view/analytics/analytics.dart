@@ -32,11 +32,10 @@ class Analytics extends StatelessWidget {
         elevation: 0,
         title: const Row(
           children: [
-            // Image.asset("assets/Group 946.png"),
             Icon(FontAwesomeIcons.magnifyingGlassChart, color: secondaryColor),
             SizedBox(width: 8),
             Text(
-              "Analytics and Logs",
+              "Analytics & Logs",
               style: TextStyle(
                   color: secondaryColor,
                   fontSize: fontSmall,
