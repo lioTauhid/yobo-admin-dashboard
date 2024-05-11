@@ -36,17 +36,18 @@ dependencies:
   font_awesome_flutter:
   intl:
   firebase_core:
-  firebase_auth:
-  google_sign_in:
   firebase_storage:
   firebase_database:
-  cloud_firestore: ^4.9.2
+  cloud_firestore:
+  firebase_auth:
+  google_sign_in:
   permission_handler:
   lottie:
   qr_code_scanner:
   flutter_inappwebview:
   url_launcher:
   flutter_native_splash:
+  file_picker:
 
 
 dev_dependencies:
@@ -58,7 +59,16 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.2
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
+  web:
+    generate: true
+    image_path: "assets/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

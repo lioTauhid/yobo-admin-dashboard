@@ -27,7 +27,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <title>yobo_bot</title>
+  <title>Yobo Admin</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -108,6 +108,11 @@
       document.body.style.background = "transparent";
     }
   </script>
+  <script
+          type="application/javascript"
+          src="/assets/packages/flutter_inappwebview_web/assets/web/web_support.js"
+          defer
+  ></script>
 </head>
 <body>
   <picture id="splash">
@@ -115,7 +120,7 @@
       <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
       <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
   </picture>
-  
+
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
